@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabContents = document.querySelectorAll('.tab-content');
     
     // Пароль для входа
-    const ADMIN_PASSWORD = '3510';
+    const ADMIN_PASSWORD = 'admin'; // Можно заменить на свой
     
     // Проверка сессии при загрузке
     checkSession();
