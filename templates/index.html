@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продажа автомобилей</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <!-- Страница-заглушка с запросом геолокации -->
+    <div class="geolocation-overlay" id="geolocation-overlay">
+        <div class="content">
+            <div class="icon">📍</div>
+            <h1>Добро пожаловать в AutoShop!</h1>
+            <p>Чтобы продолжить, нам необходимо определить ваше местоположение. Это поможет нам показать ближайшие автомобили и специальные предложения для вашего региона.</p>
+            <button class="btn" id="allow-geolocation-btn">Разрешить геолокацию</button>
+            <div class="error" id="geolocation-error"></div>
+        </div>
+    </div>
+
+    <!-- Основной контент (скрыт до разрешения геолокации) -->
+    <div id="main-content">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="logo">Auto<span>Shop</span></div>
+                <nav>
+                    <a href="#home">Главная</a>
+                    <a href="#cars">Автомобили</a>
+                    <a href="#features">Преимущества</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="content">
+                <h1>Найдите свой идеальный автомобиль</h1>
+                <p>Широкий выбор новых и подержанных автомобилей по лучшим ценам. Качественный сервис и гарантия на каждый автомобиль.</p>
+                <a href="#cars" class="btn">Посмотреть авто</a>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <h2>Найдите свой автомобиль</h2>
+                    <form class="search-form">
+                        <div class="form-group">
+                            <label>Марка</label>
+                            <select>
+                                <option value="">Все марки</option>
+                                <option value="bmw">BMW</option>
+                                <option value="audi">Audi</option>
+                                <option value="mercedes">Mercedes-Benz</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="hyundai">Hyundai</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Модель</label>
+                            <select>
+                                <option value="">Все модели</option>
+                                <option value="sedan">Седан</option>
+                                <option value="suv">Внедорожник</option>
+                                <option value="hatchback">Хэтчбек</option>
+                                <option value="coupe">Купе</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Цена от</label>
+                            <input type="number" placeholder="10000">
+                        </div>
+                        <div class="form-group">
+                            <label>Цена до</label>
+                            <input type="number" placeholder="50000">
+                        </div>
+                        <button type="button" class="search-btn">Найти автомобиль</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cars Section -->
+        <section class="cars-section" id="cars">
+            <div class="container">
+                <h2 class="section-title">Наши автомобили</h2>
+                <div class="cars-grid">
+                    <!-- Car Card 1 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1536613548425-7f81b0971175?w=600&h=400&fit=crop" alt="BMW X5" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">BMW X5</h3>
+                            <div class="car-price">45 000 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2022</span>
+                                <span><span class="icon">🚗</span>Бензин</span>
+                                <span><span class="icon">⚙️</span>Автомат</span>
+                            </div>
+                            <p class="car-description">Премиум внедорожник с мощным двигателем и передовыми технологиями. Идеальное сочетание комфорта и производительности.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&h=400&fit=crop" alt="Audi A6" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">Audi A6</h3>
+                            <div class="car-price">38 500 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2021</span>
+                                <span><span class="icon">🚗</span>Дизель</span>
+                                <span><span class="icon">⚙️</span>Автомат</span>
+                            </div>
+                            <p class="car-description">Элегантный седан премиум-класса с инновационными технологиями и безупречной надежностью.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1619754682767-0b6ba1839311?w=600&h=400&fit=crop" alt="Mercedes-Benz C-Class" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">Mercedes-Benz C-Class</h3>
+                            <div class="car-price">42 000 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2023</span>
+                                <span><span class="icon">🚗</span>Гибрид</span>
+                                <span><span class="icon">⚙️</span>Вариатор</span>
+                            </div>
+                            <p class="car-description">Комфортный седан с роскошным салоном и передовыми системами безопасности. Идеальный выбор для бизнес-леди.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 4 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980adade?w=600&h=400&fit=crop" alt="Toyota RAV4" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">Toyota RAV4</h3>
+                            <div class="car-price">32 000 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2022</span>
+                                <span><span class="icon">🚗</span>Гибрид</span>
+                                <span><span class="icon">⚙️</span>Автомат</span>
+                            </div>
+                            <p class="car-description">Надежный внедорожник с отличной проходимостью и экономичным двигателем. Идеален для поездок на природу.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 5 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1605020313531-11784b95d244?w=600&h=400&fit=crop" alt="Hyundai Tucson" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">Hyundai Tucson</h3>
+                            <div class="car-price">28 500 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2023</span>
+                                <span><span class="icon">🚗</span>Бензин</span>
+                                <span><span class="icon">⚙️</span>Автомат</span>
+                            </div>
+                            <p class="car-description">Современный внедорожник с передовыми технологиями и отличным соотношением цены и качества.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 6 -->
+                    <div class="car-card">
+                        <img src="https://images.unsplash.com/photo-1621627068162-5c7c6221f012?w=600&h=400&fit=crop" alt="BMW M3" class="car-image">
+                        <div class="car-info">
+                            <h3 class="car-title">BMW M3</h3>
+                            <div class="car-price">65 000 €</div>
+                            <div class="car-details">
+                                <span><span class="icon">📅</span>2024</span>
+                                <span><span class="icon">🚗</span>Бензин</span>
+                                <span><span class="icon">⚙️</span>Механика</span>
+                            </div>
+                            <p class="car-description">Спортивный седан с мощным двигателем и исключительной управляемостью. Для тех, кто ценит скорость и стиль.</p>
+                            <button class="btn">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <h2 class="section-title">Наши преимущества</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">✅</div>
+                        <h3>Гарантия качества</h3>
+                        <p>Все автомобили проходят тщательную диагностику и имеют официальную гарантию.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🛡️</div>
+                        <h3>Юридическая чистота</h3>
+                        <p>Полная проверка истории автомобиля и отсутствие задолженностей.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">💰</div>
+                        <h3>Выгодные цены</h3>
+                        <p>Лучшие цены на рынке благодаря прямым контрактам с дилерами.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🚗</div>
+                        <h3>Доставка</h3>
+                        <p>Бесплатная доставка автомобиля в любой город страны.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" name="name" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone" placeholder="+380 67 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Электронная почта</label>
+                        <input type="email" name="email" placeholder="ivan@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Интересующий автомобиль</label>
+                        <select name="car">
+                            <option value="">Выберите автомобиль</option>
+                            <option value="bmw">BMW X5</option>
+                            <option value="audi">Audi A6</option>
+                            <option value="mercedes">Mercedes-Benz C-Class</option>
+                            <option value="toyota">Toyota RAV4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Сообщение</label>
+                        <textarea name="message" placeholder="Ваше сообщение..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить заявку</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-col">
+                    <h3>AutoShop</h3>
+                    <p>Лидер на рынке продажи автомобилей. Мы предлагаем только проверенные автомобили с гарантией качества.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Каталог</h3>
+                    <ul>
+                        <li><a href="#">Новые автомобили</a></li>
+                        <li><a href="#">Подержанные автомобили</a></li>
+                        <li><a href="#">Спецпредложения</a></li>
+                        <li><a href="#">Тест-драйв</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Компания</h3>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Дилерам</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>📍 г. Киев, ул. Хрещатик, 1</li>
+                        <li>📞 +380 800 123 456</li>
+                        <li>✉️ info@autoshop.com</li>
+                        <li>⏰ Пн-Вс: 9:00-20:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 AutoShop. Все права защищены.
+            </div>
+        </footer>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

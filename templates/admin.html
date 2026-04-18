@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель - AutoShop</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+</head>
+<body>
+    <!-- Страница входа -->
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-content">
+            <div class="login-icon">🔒</div>
+            <h1>Вход в админ панель</h1>
+            <p>Введите пароль для доступа к данным</p>
+            <form class="login-form" id="login-form">
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit" class="login-btn">Войти</button>
+            </form>
+            <div class="error" id="login-error"></div>
+        </div>
+    </div>
+
+    <!-- Основной контент админ панели (скрыт до входа) -->
+    <div id="admin-content" class="hidden">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="container">
+                <div class="logo">Auto<span>Shop</span> Admin</div>
+                <nav>
+                    <a href="#" onclick="location.reload()">Обновить</a>
+                    <a href="/" target="_blank">На сайт</a>
+                    <button class="logout-btn" id="logout-btn">Выйти</button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="container">
+                <!-- Статистика -->
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <h3>Всего заявок</h3>
+                            <p class="stat-value" id="total-contacts">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-info">
+                            <h3>Геолокаций</h3>
+                            <p class="stat-value" id="total-locations">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="contacts">Заявки контактов</button>
+                    <button class="tab-btn" data-tab="locations">Геолокации</button>
+                </div>
+
+                <!-- Контент заявок -->
+                <div class="tab-content active" id="contacts-content">
+                    <div class="data-section">
+                        <h2 class="section-title">Заявки контактов</h2>
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Имя</th>
+                                        <th>Телефон</th>
+                                        <th>Email</th>
+                                        <th>Автомобиль</th>
+                                        <th>Сообщение</th>
+                                        <th>Время</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contacts-table-body">
+                                    <!-- Данные будут загружены через JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент локаций -->
+                <div class="tab-content hidden" id="locations-content">
+                    <div class="data-section">
+                        <h2 class="section-title">Геолокации</h2>
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Широта</th>
+                                        <th>Долгота</th>
+                                        <th>Ссылка на карту</th>
+                                        <th>Время</th>
+                                        <th>User Agent</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="locations-table-body">
+                                    <!-- Данные будут загружены через JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <div class="container">
+                <p>&copy; 2024 AutoShop. Админ панель.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>
